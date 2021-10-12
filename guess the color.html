@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container-fluid{
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    
+
+        margin-left:10%;
+        margin-right:10%;
+        border-radius: 25% 10%;
+        height: 90vh;
+        border:1px solid #000;
+        background: linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
+    }
+    .container{
+        margin-top: 200px;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+         position: relative; 
+    }
+    .container1{
+        /* margin-top: 50px; */
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        position: relative;
+    }
+    .conatiner2{
+        
+        text-align: center;
+
+    }
+    .test{
+        width: 150px;
+        height:200px;
+        border:1px solid #000;
+      /* border-radius: 50%; */
+        }
+
+    .test2{
+        /* border-radius: 50%; */
+        width:150px;
+        height:200px;
+        background-color: brown;
+        /* border-left: 6px solid black;
+         /* position: absolute;  */
+        /* left: 50%;
+         margin-left: -3px;  */ 
+        
+        
+    }
+    .btn{
+        width: 200px;
+        margin:10px;
+        height:40px;
+        border-radius: 15px;
+        background-color:cyan;
+        border-bottom: 3px solid black;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight:900;
+        font-size: larger;
+        
+
+
+    }
+    hr.solid {
+        border-top: 3px solid rgb(22, 2, 2);
+        bottom: 50%;
+    }
+
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="test" id="box1"></div>
+             <div class=test2 id="box2" hr class="solid" ></div> 
+        </div>
+        <div class="container1">
+            <button class="btn" id="btn1">RED</button>
+            <button class="btn" id="btn2">YELLOW</button>
+            <button class="btn" id="btn3">GREEN</button>
+            <button class="btn" id="btn4">BLUE</button>
+            <button class="btn"  id="btn5" onclick=window.location.reload();>TO Guess Next Tym</button> 
+        </div>
+        <div class="conatiner2">
+            <p id="demo"><h1></h1></p>
+        </div>
+    </div>
+
+    <script>
+        a=document.getElementById("box1");
+        b=document.getElementById("box2");
+        c=document.getElementById("btn1");
+        d=document.getElementById("btn2");
+        j=document.getElementById("btn3");
+        f=document.getElementById("btn4");
+        i=document.getElementById("btn5");
+
+        window.setTimeout(myFunction, 5000);
+        
+
+        //  i.onclick=handler;
+
+        // function handler(){
+           let  g=["RED","YELLOW","GREEN","BLUE"];
+            let h=g[Math.floor(Math.random()*g.length)];
+            let z=h;
+
+            console.log(h);
+            // console.log(h);
+            document.getElementById("box1").style.background=h;
+            // }
+
+
+        function myFunction() {
+            // alert("clicked")
+             document.getElementById("box1").style.display="none";
+            
+        }
+
+        c.onclick=result;
+        d.onclick=result;
+        j.onclick=result;
+        f.onclick=result;
+
+        function result(e){
+
+            if(e.target.innerText==z){
+
+                document.getElementById("demo").innerHTML=`<h1> ITS CORRECT IT IS ${z}</h1>`;
+
+              
+                }
+
+             else {
+
+                document.getElementById("demo").innerHTML=`<h1> ITS WRONG , CORRECT COLOR IS  ${z}</h1>`;
+             }
+
+
+        }
+
+        
+
+
+
+        // document.getElementById("demo").innerText=c
+
+
+
+
+
+
+        
+
+        
+
+    </script>
+</body>
+</html>
